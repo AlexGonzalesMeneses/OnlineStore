@@ -10,6 +10,11 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using OnlineStore.Ado.Repositories;
+using OnlineStore.Api.Services;
+using OnlineStore.Core.Contracts.Repositories;
+using OnlineStore.Core.Contracts.Services;
+using OnlineStore.Core.Services;
 
 namespace OnlineStore.Api
 {
@@ -25,6 +30,10 @@ namespace OnlineStore.Api
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton<ILoggerManager, LoggerManager>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryService, CategoryService>();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

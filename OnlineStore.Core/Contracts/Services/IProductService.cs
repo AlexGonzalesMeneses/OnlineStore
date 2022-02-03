@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq.Expressions;
 using OnlineStore.Core.Models;
 
 namespace OnlineStore.Core.Contracts.Services
@@ -11,5 +12,6 @@ namespace OnlineStore.Core.Contracts.Services
         Product Add(Product entity);
         Product Update(Product entity);
         Product Delete(Product entity);
+        IEnumerable<Product> Search(Expression<Func<Product, bool>> predicate);
     }
 }

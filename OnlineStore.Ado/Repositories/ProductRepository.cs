@@ -12,7 +12,7 @@ namespace OnlineStore.Ado.Repositories
     {
         public Product GetById(Guid id)
         {
-            Product product = null;
+            Product product = new Product();
 
             using (var conn = new SqlConnection(OnlineStoreContext.ConnectionString))
             {
@@ -78,7 +78,7 @@ namespace OnlineStore.Ado.Repositories
                     cmd.Parameters.AddWithValue("@Id", entity.Id);
                     cmd.Parameters.AddWithValue("@Name", entity.Name);
                     cmd.Parameters.AddWithValue("@Stock", entity.Stock);
-                    cmd.Parameters.AddWithValue("@CategoryId", entity.CategoryId);
+                    cmd.Parameters.AddWithValue("@Category_Id", entity.CategoryId);
 
                     cmd.ExecuteNonQuery();
                 }
@@ -98,7 +98,7 @@ namespace OnlineStore.Ado.Repositories
                     cmd.Parameters.AddWithValue("@Id", entity.Id);
                     cmd.Parameters.AddWithValue("@Name", entity.Name);
                     cmd.Parameters.AddWithValue("@Stock", entity.Stock);
-                    cmd.Parameters.AddWithValue("@CategoryId", entity.CategoryId);
+                    cmd.Parameters.AddWithValue("@Category_Id", entity.CategoryId);
 
                     cmd.ExecuteNonQuery();
                 }

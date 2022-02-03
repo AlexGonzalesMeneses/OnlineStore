@@ -20,7 +20,7 @@ namespace OnlineStore.Ado.Repositories
                 {
                     cmd.Parameters.AddWithValue("@Id", entity.Id);
                     cmd.Parameters.AddWithValue("@Order_Id", entity.OrderId);
-                    cmd.Parameters.AddWithValue("@Customer_Id", entity.UserId);
+                    cmd.Parameters.AddWithValue("@Customer_Id", entity.CustomerId);
                     cmd.Parameters.AddWithValue("@Date", entity.Date);
 
                     entity = cmd.ExecuteNonQuery() > 0 ? entity : null;
@@ -65,7 +65,7 @@ namespace OnlineStore.Ado.Repositories
                             {
                                 Id = reader.GetFieldValue<Guid>("Id"),
                                 OrderId = reader.GetFieldValue<Guid>("Order_Id"),
-                                UserId = reader.GetFieldValue<Guid>("Customer_Id"),
+                                CustomerId = reader.GetFieldValue<Guid>("Customer_Id"),
                                 Date = reader.GetFieldValue<DateTime>("Date")
                             });
                         }
@@ -96,7 +96,7 @@ namespace OnlineStore.Ado.Repositories
                             {
                                 Id = reader.GetFieldValue<Guid>("Id"),
                                 OrderId = reader.GetFieldValue<Guid>("Order_Id"),
-                                UserId = reader.GetFieldValue<Guid>("Customer_Id"),
+                                CustomerId = reader.GetFieldValue<Guid>("Customer_Id"),
                                 Date = reader.GetFieldValue<DateTime>("Date")
                             };
                         }
@@ -117,7 +117,7 @@ namespace OnlineStore.Ado.Repositories
                 {
                     cmd.Parameters.AddWithValue("@Id", entity.Id);
                     cmd.Parameters.AddWithValue("@Order_Id", entity.OrderId);
-                    cmd.Parameters.AddWithValue("@Customer_Id", entity.UserId);
+                    cmd.Parameters.AddWithValue("@Customer_Id", entity.CustomerId);
                     cmd.Parameters.AddWithValue("@Date", entity.Date);
 
                     entity = cmd.ExecuteNonQuery() > 0 ? entity : null;

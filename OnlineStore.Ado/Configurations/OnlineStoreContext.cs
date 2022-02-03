@@ -2,11 +2,11 @@ namespace OnlineStore.Ado.Configurations
 {
     public class OnlineStoreContext
     {
-        public const string ConnectionString = @"Server=localhost,1433;Database=DbOnlineStore;User ID = SA; Password=Welcome123;";
+        public const string ConnectionString = @"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=DBOnlineStore;Integrated Security=True";
 
         public const string GET_PRODUCTS_SQL = "SELECT Id, Name, Stock, Category_Id FROM Products";
         public const string GET_PRODUCT_SQL = "SELECT Id, Name, Stock, Category_Id FROM Products WHERE Id = @Id";
-        public const string UPDATE_PRODUCT_SQL = "UPDATE Products SET Name = @Name, Stock = @Stock, Category_Id = @CategoryId WHERE Id = @Id";
+        public const string UPDATE_PRODUCT_SQL = "UPDATE Products SET Name = @Name, Stock = @Stock, Category_Id = @Category_Id WHERE Id = @Id";
         public const string DELETE_PRODUCT_BY_ID_SQL = "DELETE FROM Products WHERE Id = @Id";
         public const string INSERT_PRODUCT_SQL = "INSERT INTO Products (Id, Name, Stock, Category_Id) VALUES (@Id, @Name, @Stock, @Category_Id)";
 
